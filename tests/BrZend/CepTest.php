@@ -35,16 +35,22 @@ class CepTest extends Framework\TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
      */
-    public function testWithLetterAndNumber(){
-        $this->assertEquals('sem chance',$this->Cep->__invoke('12345rt'));
+    public function testExceptionWithLetterAndNumber(){
+        $this->setExpectedException(
+            'InvalidArgumentException', 'O argumento precisa ser do tipo inteiro!'
+        );
+        $this->Cep->__invoke('12345rt');
     }
     
     /**
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
      */
-    public function testOnlyStringNumber(){
-        $this->assertEquals('sem chance',$this->Cep->__invoke('12345'));
+    public function testExceptionIntegerArgument(){
+        $this->setExpectedException(
+            'InvalidArgumentException', 'O argumento precisa ser do tipo inteiro!'
+        );
+        $this->Cep->__invoke('12345');
     }
     
     /**
@@ -52,7 +58,10 @@ class CepTest extends Framework\TestCase
      * @expectedExceptionMessage O comprimento do argumento precisa ser de 8 numeros/digitos!
      */
     public function testOnlyNumber(){
-        $this->assertEquals(12345,$this->Cep->__invoke(12345));
+        $this->setExpectedException(
+            'InvalidArgumentException', 'O comprimento do argumento precisa ser de 8 numeros/digitos!'
+        );
+        $this->Cep->__invoke(12345);
     }
    
     public function testFormat(){
