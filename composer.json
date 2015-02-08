@@ -16,7 +16,7 @@
 			"BrZend\\" : "src"
 		}
 	},
-	"name" : "AdminWeb/BrZend",
+	"name" : "adminweb/br-zend",
 	"description" : "Formatters and Validators in Brazilian Format Numbers",
 	"require" : {
 		"php" : ">=5.3"
