@@ -1,0 +1,24 @@
+{
+	"keywords" : [
+		"Zend",
+		"Zend Framework",
+		"Framework",
+		"Brazil",
+		"Brasil",
+		"Brazilian",
+		"Format",
+		"Number",
+		"Number Format",
+		"Brazilian Format Number"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"BrZend\\" : "src"
+		}
+	},
+	"name" : "AdminWeb/BrZend",
+	"description" : "Formatters and Validators in Brazilian Format Numbers",
+	"require" : {
+		"php" : ">=5.3"
+	}
+}
