@@ -57,14 +57,14 @@ class CepTest extends Framework\TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O comprimento do argumento precisa ser de 8 numeros/digitos!
      */
-    public function testOnlyNumber(){
+    public function testOnlyExceptionEndNumbersLengthLessthanEight(){
         $this->setExpectedException(
             'InvalidArgumentException', 'O comprimento do argumento precisa ser de 8 numeros/digitos!'
         );
         $this->Cep->__invoke(12345);
     }
    
-    public function testFormat(){
+    public function testFormatOutput(){
         $this->assertEquals('12.345-678',$this->Cep->__invoke(12345678));
     }
 }
