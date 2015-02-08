@@ -7,6 +7,7 @@ return array(
     ),
     'view_helpers' => array(
         'invokables' => array(
+            'cpf'=>'BrZend\View\Helper\CPF',
             'cep'=>'BrZend\View\Helper\CEP'
         )
     ),
