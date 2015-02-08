@@ -6,9 +6,9 @@ return array(
         ),
     ),
     'view_helpers' => array(
-        'invokables' => array(
+        'invokables' => array(            
+            'cep'=>'BrZend\View\Helper\CEP',
             'cpf'=>'BrZend\View\Helper\CPF',
-            'cep'=>'BrZend\View\Helper\CEP'
         )
     ),
     'router' => array(
@@ -53,9 +53,4 @@ return array(
             'BrZend' => __DIR__ . '/../view',
         ),
     ),
-'view_helpers' => array(
-'invokables' => array(
-	'CEP' => 'BrZend\View\Helper\CEP',
-		),
-	)
 );
