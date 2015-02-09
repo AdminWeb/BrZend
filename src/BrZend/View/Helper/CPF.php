@@ -15,7 +15,7 @@ use \InvalidArgumentException;
 class CPF extends AbstractHelper
 {
 
-    public function __invoke($in,$returntotalsoma = false,$returnfirstdigit = false)
+    public function __invoke($in,$returntotalsoma = false,$returnfirstdigit = false,$returnsecdigit = false)
     {
         $cpf = '';
         $vef1 = array(10,9,8,7,6,5,4,3,2);
@@ -47,7 +47,11 @@ class CPF extends AbstractHelper
             $total += $vef2[$i] * $in[$i];
         }
         $vef2 = (($total % 11) < 2) ? 0 : (int) (11 - ($total % 11));
-        return $vef2;
+        if($returnsecdigit){
+            return $vef2;
+        }
+        $in .= $vef2;
+        return substr($in,0,3).'.'.substr($in,3,3).'.'.substr($in,6,3).'-'.substr($in,9,2);
         
         
     }

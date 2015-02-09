@@ -80,7 +80,10 @@ class CPFTest extends Framework\TestCase
         $this->assertEquals(3,$this->CPF->__invoke(11144477735,false,true));
     }
     public function testReturnSecondDigit(){
-        $this->assertEquals(5,$this->CPF->__invoke(11144477735));
+        $this->assertEquals(5,$this->CPF->__invoke(11144477735,false,false,true));
+    }
+    public function testReturnOutput(){
+        $this->assertEquals('111.444.777-35',$this->CPF->__invoke(11144477735));
     }
 
 }
