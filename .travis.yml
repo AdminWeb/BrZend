@@ -6,7 +6,7 @@ before_script:
 - git clone git://github.com/zendframework/ZendSkeletonApplication.git
 - cd ZendSkeletonApplication
 - php composer.phar install
-- cp . ZendSkeletonApplication/module/BrZend
+- sudo cp ./ ZendSkeletonApplication/module/BrZend
 
 script:
 - cd ZendSkeletonApplication/module/BrZend/tests
