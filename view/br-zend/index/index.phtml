@@ -1,2 +1,10 @@
+<?php use BrZend\Validator\CPF;
+
+$cpf = new CPF();
+$cpf->isValid('111.444.777-35');
+echo '<br>';
+?>
 <?php print_r($this->cep(25823453));?><br>
 <?php print_r($this->cpf(11144477735));?>
+
+
