@@ -3,12 +3,12 @@ php:
 - 5.3
 
 before_script:
+- cd ../
 - git clone git://github.com/zendframework/ZendSkeletonApplication.git
 - cd ZendSkeletonApplication
 - php composer.phar selfupdate
 - php composer.phar install
-- cd ../../
-- ls
+- cd ../
 - sudo cp BrZend/ ZendSkeletonApplication/module/BrZend
 
 script:
