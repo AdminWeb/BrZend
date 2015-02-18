@@ -4,3 +4,4 @@ BrZend [![Build Status](https://travis-ci.org/AdminWeb/BrZend.svg?branch=master)
 This is formatters and validators for numbers in Brazilian formats
 
 1. CEP (ZIP Code)
+2. CPF (Formatter and Validator)
