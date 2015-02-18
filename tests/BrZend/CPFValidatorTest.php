@@ -43,6 +43,13 @@ class CPFValidatorTest extends Framework\TestCase
         );
         $this->CPF->isValid('12345');
     }
+    
+    public function testFalseCPF(){
+        $this->assertFalse($this->CPF->isValid('111.424.777-35'));
+    }
+    public function testTrueCPF(){
+        $this->assertTrue($this->CPF->isValid('731.888.659-29'));
+    }
 
 }
 

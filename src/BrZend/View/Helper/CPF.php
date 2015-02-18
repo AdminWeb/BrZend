@@ -15,7 +15,6 @@ use \LengthException;
  */
 class CPF extends AbstractHelper
 {
-
     public function __invoke($in)
     {
         if(!is_int($in)){
