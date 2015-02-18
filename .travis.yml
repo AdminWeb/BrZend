@@ -7,7 +7,7 @@ before_script:
 - cd ZendSkeletonApplication
 - php composer.phar selfupdate
 - php composer.phar install
-- sudo cp ./ ZendSkeletonApplication/module/BrZend
+- sudo cp BrZend/ ZendSkeletonApplication/module/BrZend
 
 script:
 - cd ZendSkeletonApplication/module/BrZend/tests
