@@ -9,6 +9,7 @@ namespace BrZend\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 use \InvalidArgumentException;
+use \LengthException;
 /**
  * View Helper
  */
@@ -21,7 +22,7 @@ class CPF extends AbstractHelper
             throw new InvalidArgumentException("O argumento precisa ser do tipo inteiro!");
         }
         if(strlen($in) != 11){
-            throw new InvalidArgumentException("O comprimento do argumento precisa ser de 11 numeros/digitos!");
+            throw new LengthException("O comprimento do argumento precisa ser de 11 numeros/digitos!");
         }       
         return substr($in,0,3).'.'.substr($in,3,3).'.'.substr($in,6,3).'-'.substr($in,9,2);                
     }

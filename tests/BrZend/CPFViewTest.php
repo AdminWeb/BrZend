@@ -2,6 +2,7 @@
 namespace BrZendTest;
 use BrZend\View\Helper\CPF;
 use \InvalidArgumentException;
+use \LengthException;
 /**
  * CPF test case.
  */
@@ -62,12 +63,12 @@ class CPFViewTest extends Framework\TestCase
     }
     
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException LengthException
      * @expectedExceptionMessage O comprimento do argumento precisa ser de 11 numeros/digitos!
      */
     public function testOnlyExceptionEndNumbersLengthLessthanEleven(){
         $this->setExpectedException(
-            'InvalidArgumentException', 'O comprimento do argumento precisa ser de 11 numeros/digitos!'
+            'LengthException', 'O comprimento do argumento precisa ser de 11 numeros/digitos!'
         );
         $this->CPF->__invoke(12345);
     }    
