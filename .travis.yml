@@ -19,5 +19,5 @@ script:
 - phpunit --coverage-clover ../../../build/logs/clover.xml
 after_script:
 - cd ../../../
-- ls module
+- ls module/BrZend
 - php vendor/bin/coveralls
