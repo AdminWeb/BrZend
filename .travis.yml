@@ -16,3 +16,5 @@ before_script:
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
 - phpunit
+after_script:
+- php ../../../vendor/bin/coveralls -v
