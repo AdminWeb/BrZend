@@ -12,7 +12,6 @@ before_script:
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
 - cd ZendSkeletonApplication
 - composer require  satooshi/php-coveralls:dev-master
-- cd ../
 - sudo mkdir build
 - sudo mkdir build/logs
 
