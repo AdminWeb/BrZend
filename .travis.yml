@@ -20,6 +20,7 @@ script:
 - phpunit --coverage-clover ../../../build/logs/clover.xml
 - sudo cp -R ../../../build/ ../build
 - cd ../
+- ls -a
 
 after_script:
 - php ../../vendor/bin/coveralls -v

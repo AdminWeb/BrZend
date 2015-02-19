@@ -16,7 +16,7 @@
 			"BrZend\\" : "src"
 		}
 	},
-	"license":"MIT",
+	"license": "MIT",
 	"name" : "adminweb/br-zend",
 	"description" : "Formatters and Validators in Brazilian Format Numbers",
 	"require" : {
