@@ -20,4 +20,4 @@ script:
 after_script:
 - cd ../../../
 - ls -a module/BrZend
-- php vendor/bin/coveralls
+- php vendor/bin/coveralls -c module/BrZend/.coveralls.yml
