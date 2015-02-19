@@ -9,7 +9,6 @@ before_script:
 - php composer.phar selfupdate
 - php composer.phar install
 - cd ../
-- mkdir -p BrZend/build/logs
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
 - cd ZendSkeletonApplication
 - composer require  satooshi/php-coveralls:dev-master
@@ -17,6 +16,7 @@ before_script:
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
+- mkdir -p ../build/logs
 - phpunit --coverage-clover ../build/logs/clover.xml
 after_script:
 - cd ../
