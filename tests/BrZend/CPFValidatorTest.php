@@ -34,7 +34,7 @@ class CPFValidatorTest extends Framework\TestCase
     }
     
     /**
-     * @covers CPF::isValid
+     * @covers BrZend\Validator\CPF::isValid
      * @expectedException LengthException
      * @expectedExceptionMessage O comprimento do argumento precisa ser de 11 numeros/digitos!
      */
@@ -46,14 +46,14 @@ class CPFValidatorTest extends Framework\TestCase
     }
     
     /**
-     * @covers CPF::isValid
+     * @covers BrZend\Validator\CPF::isValid
      */
     public function testFalseCPF(){
         $this->assertFalse($this->CPF->isValid('111.424.777-35'));
     }
 
     /**
-     * @covers CPF::isValid
+     * @covers BrZend\Validator\CPF::isValid
      */
     public function testTrueCPF(){
         $this->assertTrue($this->CPF->isValid('731.888.659-29'));
