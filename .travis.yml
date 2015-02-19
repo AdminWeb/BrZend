@@ -12,12 +12,12 @@ before_script:
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
 - cd ZendSkeletonApplication
 - composer require  satooshi/php-coveralls:dev-master
-- mkdir -p build/logs
+- mkdir -p module/BrZend/build/logs
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
-- phpunit --coverage-clover ../../../build/logs/clover.xml
+- phpunit --coverage-clover ../build/logs/clover.xml
 after_script:
-- cd ../../../
-- ls -a module/BrZend
-- php vendor/bin/coveralls -c module/BrZend/.coveralls.yml
+- cd ../
+- ls -a .
+- php ../../vendor/bin/coveralls -v
