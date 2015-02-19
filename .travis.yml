@@ -19,4 +19,5 @@ script:
 - phpunit --coverage-clover ../../../build/logs/clover.xml
 after_script:
 - cd ../../../
+- ls
 - php vendor/bin/coveralls
