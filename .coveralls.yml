@@ -1,2 +1,2 @@
 coverage_clover: build/logs/clover.xml
-src_dir: ../ZendSkeletonApplication/module/BrZend/src/
+src_dir: ./module/BrZend/src/

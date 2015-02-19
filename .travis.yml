@@ -16,9 +16,9 @@ before_script:
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
-- phpunit 
+- phpunit --coverage-clover ../../../build/logs/clover.xml
 after_script:
 - cd ../../../
 - php vendor/bin/coveralls -v
 - cat build/logs/clover.xml
-- php vendor/bin/coveralls:vl:jobs -c build/logs/clover.xml --dry-run
+- php vendor/bin/coveralls -c build/logs/clover.xml --dry-run
