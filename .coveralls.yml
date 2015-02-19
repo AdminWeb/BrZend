@@ -1,2 +1,2 @@
 service_name: travis-ci
-src_dir: module/BrZend/
+src_dir: module/BrZend/src
