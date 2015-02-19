@@ -12,6 +12,7 @@ before_script:
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
 - cd ZendSkeletonApplication
 - composer require  satooshi/php-coveralls:dev-master
+- composer require codeclimate/php-test-reporter:dev-master
 - mkdir -p build/logs
 
 
@@ -23,4 +24,5 @@ script:
 - ls -a
 
 after_script:
-- php ../../vendor/bin/coveralls -v
+- ../../vendor/bin/coveralls -v
+- CODECLIMATE_REPO_TOKEN=cd80a431d35b441dd5f3b09806d9164537bb48197d40de8264d231f00ce04704 ../../vendor/bin/test-reporter 
