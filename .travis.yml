@@ -9,10 +9,11 @@ before_script:
 - php composer.phar selfupdate
 - php composer.phar install
 - cd ../
+- mkdir -p BrZend/build/logs
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
 - cd ZendSkeletonApplication
 - composer require  satooshi/php-coveralls:dev-master
-- mkdir -p module/BrZend/build/logs
+
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
