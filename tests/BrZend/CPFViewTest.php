@@ -41,6 +41,7 @@ class CPFViewTest extends Framework\TestCase
    
 
     /**
+     * @covers CPF::__invoke
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
      */
@@ -52,6 +53,7 @@ class CPFViewTest extends Framework\TestCase
     }
     
     /**
+     * @covers CPF::__invoke
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
      */
@@ -63,6 +65,7 @@ class CPFViewTest extends Framework\TestCase
     }
     
     /**
+    * @covers CPF::__invoke
      * @expectedException LengthException
      * @expectedExceptionMessage O comprimento do argumento precisa ser de 11 numeros/digitos!
      */
@@ -73,6 +76,9 @@ class CPFViewTest extends Framework\TestCase
         $this->CPF->__invoke(12345);
     }    
   
+    /**
+     * @covers CPF::__invoke
+     */
     public function testReturnOutput(){
         $this->assertEquals('111.444.777-35',$this->CPF->__invoke(11144477735));
     }

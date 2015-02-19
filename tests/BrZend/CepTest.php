@@ -32,6 +32,7 @@ class CepTest extends Framework\TestCase
     }
 
     /**
+     * @covers CPF::__invoke
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
      */
@@ -43,6 +44,7 @@ class CepTest extends Framework\TestCase
     }
     
     /**
+     * @covers CPF::__invoke
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
      */
@@ -54,6 +56,7 @@ class CepTest extends Framework\TestCase
     }
     
     /**
+     * @covers CPF::__invoke
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O comprimento do argumento precisa ser de 8 numeros/digitos!
      */
@@ -64,6 +67,9 @@ class CepTest extends Framework\TestCase
         $this->Cep->__invoke(12345);
     }
    
+    /**
+     * @covers CPF::__invoke
+     */
     public function testFormatOutput(){
         $this->assertEquals('12.345-678',$this->Cep->__invoke(12345678));
     }
