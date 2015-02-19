@@ -10,6 +10,8 @@ before_script:
 - php composer.phar install
 - cd ../
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
+- cd ZendSkeletonApplication
+- composer require  satooshi/php-coveralls:dev-master
 
 script:
 - cd ZendSkeletonApplication/module/BrZend/tests
