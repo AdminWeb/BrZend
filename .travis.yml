@@ -18,6 +18,6 @@ before_script:
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
 - phpunit --coverage-clover ../../../build/logs/clover.xml
--cd ../../../
+- cd ../../../
 after_script:
 - php vendor/bin/coveralls -v
