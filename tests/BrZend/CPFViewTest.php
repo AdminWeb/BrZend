@@ -41,7 +41,7 @@ class CPFViewTest extends Framework\TestCase
    
 
     /**
-     * @covers BrZend\View\Helper\CPF::__invoke
+     * @covers BrZend\View\Helper\CPF
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
      */

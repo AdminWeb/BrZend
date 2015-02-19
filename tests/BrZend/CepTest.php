@@ -68,7 +68,7 @@ class CepTest extends Framework\TestCase
     }
    
     /**
-     * @covers BrZend\View\Helper\CEP:__invoke
+     * @covers BrZend\View\Helper\CEP::__invoke
      */
     public function testFormatOutput(){
         $this->assertEquals('12.345-678',$this->Cep->__invoke(12345678));
