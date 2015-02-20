@@ -23,6 +23,4 @@ script:
 
 after_script:
 - sudo chmod -R 777 build/logs
-- sudo touch build/logs/coveralls-upload.json
-- sudo chmod 777 build/logs/coveralls-upload.json
 - php ../vendor/bin/coveralls -v
