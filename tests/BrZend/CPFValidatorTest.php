@@ -2,7 +2,7 @@
 namespace BrZendTest;
 use BrZend\Validator\CPF;
 use \InvalidArgumentException;
-
+use \ReflectionClass;
 /**
  * CPF test case.
  */
@@ -57,6 +57,34 @@ class CPFValidatorTest extends Framework\TestCase
      */
     public function testTrueCPF(){
         $this->assertTrue($this->CPF->isValid('731.888.659-29'));
+    }
+
+    /**
+     * @covers BrZend\Validator\CPF::getDigitOne
+     */
+    public function testGetDigitOne()
+    {
+       
+        $this->assertEquals(3,$$this->callPrivate($this->CPF,'getDigitOne',111444777));
+    }
+
+    protected function callPrivate($object, $methodName, $arg1 /*, $arg2, ... */)
+    {
+        if (!is_object($object))
+        {
+            throw new Exception("{$object} is not an object");
+        }
+
+        if (!method_exists($object, $methodName))
+        {
+            throw new Exception(get_class($object)." has no method ".$methodName);
+        }
+
+        $args = array_slice(func_get_args(), 2);
+        $method = new ReflectionMethod($object, $methodName);
+        $method->setAccessible(TRUE);
+
+        return $method->invokeArgs($object, $args);
     }
 
 }
