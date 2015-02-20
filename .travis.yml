@@ -10,20 +10,14 @@ before_script:
 - php composer.phar install
 - cd ../
 - cd BrZend
+- mkdir -p build/logs
 - composer install --dev --no-interaction
 - cd ..
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
 - cd ZendSkeletonApplication
-- mkdir -p module/BrZend/build/logs
-
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
 - sudo phpunit --coverage-clover ../build/logs/clover.xml
-- phpunit --coverage-clover ../../../build/logs/clover.xml
-- sudo cp -R ../../../build/ ../build
-- cd ../
-- ls -a
-
 after_script:
-- ../../vendor/bin/coveralls -v
+- php vendor/bin/coveralls -v
