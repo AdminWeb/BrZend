@@ -63,12 +63,19 @@ class CPFValidatorTest extends Framework\TestCase
      * @covers BrZend\Validator\CPF::getDigitOne
      */
     public function testGetDigitOne()
-    {
-       
+    {       
         $this->assertEquals(3,$this->callPrivate($this->CPF,'getDigitOne','111444777'));
     }
 
-    protected function callPrivate($object, $methodName, $arg1 /*, $arg2, ... */)
+     /**
+     * @covers BrZend\Validator\CPF::getDigitTwo
+     */
+    public function testGetDigitTwo()
+    {       
+        $this->assertEquals(5,$this->callPrivate($this->CPF,'getDigitTwo','1114447773'));
+    }
+
+    protected function callPrivate($object, $methodName, $arg1)
     {
         if (!is_object($object))
         {
