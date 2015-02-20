@@ -9,15 +9,17 @@ before_script:
 - php composer.phar selfupdate
 - php composer.phar install
 - cd ../
+- cd BrZend
+- composer install --dev --no-interaction
+- cd ..
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
 - cd ZendSkeletonApplication
-- composer require  satooshi/php-coveralls:dev-master
-- mkdir -p build/logs
+- mkdir -p module/BrZend/build/logs
 
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
-- phpunit --coverage-clover ../../../build/logs/clover.xml
-- cd ../../../
+- sudo phpunit --coverage-clover ../build/logs/clover.xml
+
 after_script:
 - php vendor/bin/coveralls -v
