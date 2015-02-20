@@ -23,4 +23,4 @@ script:
 
 after_script:
 - sudo chmod -R 777 build
-- php ../vendor/bin/coveralls -v
+- sudo php ../vendor/bin/coveralls -v
