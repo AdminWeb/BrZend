@@ -65,7 +65,7 @@ class CPFValidatorTest extends Framework\TestCase
     public function testGetDigitOne()
     {
        
-        $this->assertEquals(3,$this->callPrivate($this->CPF,'getDigitOne',111444777));
+        $this->assertEquals(3,$this->callPrivate($this->CPF,'getDigitOne','111444777'));
     }
 
     protected function callPrivate($object, $methodName, $arg1 /*, $arg2, ... */)
@@ -77,7 +77,7 @@ class CPFValidatorTest extends Framework\TestCase
 
         if (!method_exists($object, $methodName))
         {
-            throw new Exception(get_class($object)." has no method ".$methodName);
+            throw new \Exception(get_class($object)." has no method ".$methodName);
         }
 
         $args = array_slice(func_get_args(), 2);

@@ -3,7 +3,6 @@ namespace BrZend\Validator;
 
 use Zend\Validator\AbstractValidator;
 use \LengthException;
-use BrZend\View\CPF as CPFView;
 /**
  *
  * @author igor
@@ -26,7 +25,7 @@ class CPF extends AbstractValidator
      */
     public function isValid($value)
     { 
-    
+        $isValid = false;
         $numbers = preg_replace("/[^0-9]/", "", $value);
         if (strlen($numbers) != 11) {
             $this->error(self::LENGTH);
@@ -37,9 +36,9 @@ class CPF extends AbstractValidator
         $dig2 = $this->getDigitTwo($numbers);
         $digits = $dig1 . $dig2;
         if ($digits == $final[1]) {
-            return true;
+            $isValid = true;
         }
-        return false;
+        return $isValid;
     }
 
     protected function getDigitOne($value)
