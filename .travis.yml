@@ -11,8 +11,6 @@ before_script:
 - cd ../
 - cd BrZend
 - mkdir -p tests/build/logs
-- chmod -R 777 tests
-- ls -a tests
 - composer install --dev --no-interaction
 - cd ..
 - sudo cp -R BrZend/ ZendSkeletonApplication/module/BrZend
@@ -20,7 +18,8 @@ before_script:
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
+- sudo chmod -R 777 build
 - phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
-- php vendor/bin/coveralls -v
+- php ../vendor/bin/coveralls -v
