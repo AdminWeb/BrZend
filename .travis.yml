@@ -22,4 +22,5 @@ script:
 - phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
+- sudo chmod -R 777 build
 - php ../vendor/bin/coveralls -v
