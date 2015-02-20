@@ -19,7 +19,7 @@ before_script:
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
 - sudo chmod -R 777 build
-- phpunit --coverage-clover build/logs/clover.xml
+- phpunit --strict-coverage --coverage-clover build/logs/clover.xml
 
 after_script:
 - sudo chmod -R 777 build/logs
