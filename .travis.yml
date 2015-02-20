@@ -22,5 +22,7 @@ script:
 - phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
-- sudo chmod -R 777 build
-- sudo php ../vendor/bin/coveralls -v
+- sudo chmod -R 777 build/logs
+- sudo touch build/logs/coveralls-upload.json
+- sudo chmod build/logs/coveralls-upload.json
+- php ../vendor/bin/coveralls -v
