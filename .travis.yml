@@ -11,6 +11,7 @@ before_script:
 - cd ../
 - cd BrZend
 - mkdir -p tests/build/logs
+- chmod -R 777 tests
 - ls -a tests
 - composer install --dev --no-interaction
 - cd ..
