@@ -50,20 +50,9 @@ class CPFViewTest extends Framework\TestCase
             'InvalidArgumentException', 'O argumento precisa ser do tipo inteiro!'
         );
         $this->CPF->__invoke('12345rt');
-    }
-    
-    /**
-     * @covers BrZend\View\Helper\CPF::__invoke
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage O argumento precisa ser do tipo inteiro!
-     */
-    public function testExceptionIntegerArgument(){
-        $this->setExpectedException(
-            'InvalidArgumentException', 'O argumento precisa ser do tipo inteiro!'
-        );
         $this->CPF->__invoke('12345');
     }
-    
+        
     /**
     * @covers BrZend\View\Helper\CPF::__invoke
      * @expectedException LengthException
