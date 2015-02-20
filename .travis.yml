@@ -19,14 +19,11 @@ before_script:
 
 script:
 - cd ../ZendSkeletonApplication/module/BrZend/tests
-<<<<<<< HEAD
 - sudo phpunit --coverage-clover ../build/logs/clover.xml
-=======
 - phpunit --coverage-clover ../../../build/logs/clover.xml
 - sudo cp -R ../../../build/ ../build
 - cd ../
 - ls -a
->>>>>>> ffe8fb07819df78e1c6858fae632944c081ab492
 
 after_script:
 - ../../vendor/bin/coveralls -v
