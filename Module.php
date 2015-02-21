@@ -13,6 +13,11 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * @codeCoverageIgnore
+ * @author igor
+ *
+ */
 class Module implements AutoloaderProviderInterface
 {
     public function getAutoloaderConfig()
