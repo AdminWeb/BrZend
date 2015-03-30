@@ -84,10 +84,7 @@ class CPF extends AbstractValidator
         for ($i = 0; $i < $count; $i ++) {
             $total += $vef2[$i] * $value[$i];
         }
-        $vef2 = (($total % 11) < 2) ? 0 : (int) (11 - ($total % 11));
-        
+        $vef2 = (($total % 11) < 2) ? 0 : (int) (11 - ($total % 11));        
         return $vef2;
     }
 }
-
-?>
