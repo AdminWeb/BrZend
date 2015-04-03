@@ -11,15 +11,15 @@ class CNPJ extends AbstractValidator {
  
     protected $messageTemplates = array(
         self::CNPJ => "'%value%' não é um CNPJ válido.",
-        self::LENGTH => "'%value%' precisa ter o tamanho de 11 caracteres sem ponto ou traço",
+        self::LENGTH => "'%value%' precisa ter o tamanho de 15 caracteres sem ponto ou traço",
     );
  
     public function isValid($value) {
         $result = true;
         $value = preg_replace("/[^0-9]/", "", $value);
-        if (strlen($value) != 14) {
+        if (strlen($value) != 15) {
             $this->error(self::LENGTH);
-            throw new LengthException("O comprimento do argumento precisa ser de 14 numeros/digitos!");
+            throw new LengthException("O comprimento do argumento precisa ser de 15 numeros/digitos!");
         }
         $this->setValue($value);
         $one = $this->firstDigit($value);
