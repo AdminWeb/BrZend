@@ -11,10 +11,11 @@ use \LengthException;
 class CPF extends AbstractValidator
 {
     const LENGTH = 'length';
-    const DIGIT  = 'digit';
+    const CPF = 'CPF';
     
     protected $messageTemplates = array(
-        self::LENGTH => "'%value%' must be at least 11 characters in length", 
+        self::CPF => "'%value%' não é um cpj válido", 
+        self::LENGTH => "'%value%' precisa ter o comprimento de 11 caracteres sem pontos e traços", 
     );
 
     /**
@@ -37,6 +38,9 @@ class CPF extends AbstractValidator
         $digits = $dig1 . $dig2;
         if ($digits == $final[1]) {
             $isValid = true;
+        }
+        else {
+            $this->error(self::CPF);
         }
         return $isValid;
     }
