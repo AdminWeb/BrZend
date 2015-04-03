@@ -40,9 +40,9 @@ class CNPJTest extends Framework\TestCase
      * @expectedExCnpjtion InvalidArgumentExCnpjtion
      * @expectedExCnpjtionMessage O comprimento do argumento precisa ser de 14 numeros/digitos!
      */
-    public function testOnlyExCnpjtionEndNumbersLengthLessthanEight(){
-        $this->setExpectedExCnpjtion(
-            'InvalidArgumentExCnpjtion', 'O comprimento do argumento precisa ser de 14 numeros/digitos!'
+    public function testOnlyExceptionEndNumbersLengthLessthanFourteen(){
+        $this->setExpectedException(
+            'InvalidArgumentException', 'O comprimento do argumento precisa ser de 14 numeros/digitos!'
         );
         $this->Cnpj->__invoke(12345);
     }

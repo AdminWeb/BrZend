@@ -25,6 +25,5 @@
 	"require-dev":{
 		"phpunit/phpunit":"dev-master",
 		"satooshi/php-coveralls":"dev-master"
-	},
-	"version":"0.4.3"
+	}
 }
