@@ -14,12 +14,32 @@ class CNPJValidatorTest extends \PHPUnit_Framework_TestCase
     public function tearDown(){
          
     }
+    /**
+     * @covers BrZend\Validator\CPF::isValid
+     * @expectedException LengthException
+     * @expectedExceptionMessage O comprimento do argumento precisa ser de 14 numeros/digitos!
+     */
+    public function testLengthOfFourTeenDigits(){
+        $this->setExpectedException(
+            'LengthException', 'O comprimento do argumento precisa ser de 14 numeros/digitos!'
+        );
+        $this->CPF->isValid('12345');
+    }
+    /**
+     * @covers BrZend\Validator\CNPJ::firstDigit
+     */
     public function testFisrtDigit(){
         $this->assertEquals(9,$this->obj->firstDigit('060.555.513/0001-90'));
     }
+    /**
+     * @covers BrZend\Validator\CNPJ::secondDigit
+     */
     public function testSecondDigit(){
         $this->assertEquals(0,$this->obj->secondDigit('060.555.513/0001-90'));
     }
+    /**
+     * @covers BrZend\Validator\CNPJ::isValid
+     */
     public function testIsValid(){
         $this->assertEquals(true,$this->obj->isValid('060.555.513/0001-90'));//012.345.998/9012-38
     }
