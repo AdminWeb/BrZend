@@ -7,3 +7,4 @@ This is formatters and validators for numbers in Brazilian formats
 
 1. CEP (ZIP Code)
 2. CPF (Formatter and Validator)
+3. CNPJ (Validator and Formatter)
