@@ -15,16 +15,14 @@ use \InvalidArgumentException;
 class CEP extends AbstractHelper
 {
 
-    public function __invoke($in)
+    public function __invoke($cep)
     {
-        $cep = '';
-        if(!is_int($in)){
+        if(!is_int($cep)){
             throw new InvalidArgumentException("O argumento precisa ser do tipo inteiro!");
         }
-        if(strlen($in) != 8){
+        if(strlen($cep) != 8){
             throw new InvalidArgumentException("O comprimento do argumento precisa ser de 8 numeros/digitos!");
         }
-        $cep = substr($in,0,2).'.'.substr($in,2,3).'-'.substr($in,5,3);
-        return (string) $cep;
+        return substr($cep,0,2).'.'.substr($cep,2,3).'-'.substr($cep,5,3);
     }
 }

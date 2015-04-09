@@ -19,7 +19,6 @@ class CNPJ extends AbstractValidator {
         $value = preg_replace("/[^0-9]/", "", $value);
         if (strlen($value) != 15) {
             $this->error(self::LENGTH);
-            throw new LengthException("O comprimento do argumento precisa ser de 15 numeros/digitos!");
         }
         $this->setValue($value);
         $one = $this->firstDigit($value);

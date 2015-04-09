@@ -15,14 +15,14 @@ use \LengthException;
  */
 class CPF extends AbstractHelper
 {
-    public function __invoke($in)
+    public function __invoke($cpf)
     {
-        if(!is_int($in)){
+        if(!is_int($cpf)){
             throw new InvalidArgumentException("O argumento precisa ser do tipo inteiro!");
         }
-        if(strlen($in) != 11){
+        if(strlen($cpf) != 11){
             throw new LengthException("O comprimento do argumento precisa ser de 11 numeros/digitos!");
         }       
-        return substr($in,0,3).'.'.substr($in,3,3).'.'.substr($in,6,3).'-'.substr($in,9,2);                
+        return substr($cpf,0,3).'.'.substr($cpf,3,3).'.'.substr($cpf,6,3).'-'.substr($cpf,9,2);                
     }
 }

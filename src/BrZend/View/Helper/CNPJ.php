@@ -1,24 +1,27 @@
 <?php
- 
+
 namespace BrZend\View\Helper;
- 
+
 use Zend\View\Helper\AbstractHelper;
 use \LengthException;
- 
+
 class CNPJ extends AbstractHelper {
- 
-    public function __invoke($in) {
-        $len = strlen($in);
+
+    public function __invoke($cnpj) {
+        $len = strlen($cnpj);
         $format = '';
-        if ($len < 14 || $len > 15) {
-            throw new LengthException("O comprimento do argumento precisa estar entre 14 e 15 números/digitos!");
-        }
-        if ($len == 14) {
-            $format = '0'.substr($in, 0, 2) . '.' . substr($in, 2, 3) . '.' . substr($in, 5, 3) . '/' . substr($in, 8, 4) . '-' . substr($in, 12, 2);
-        }
-        if ($len == 15) {
-            $format = substr($in, 0, 3) . '.' . substr($in, 3, 3) . '.' . substr($in, 6, 3) . '/' . substr($in, 9, 4) . '-' . substr($in, 13, 2);
+        switch ($len) {
+            case 14:
+                $format = '0' . substr($cnpj, 0, 2) . '.' . substr($cnpj, 2, 3) . '.' . substr($cnpj, 5, 3) . '/' . substr($cnpj, 8, 4) . '-' . substr($cnpj, 12, 2);
+                break;
+            case 15:
+                $format = substr($cnpj, 0, 3) . '.' . substr($cnpj, 3, 3) . '.' . substr($cnpj, 6, 3) . '/' . substr($cnpj, 9, 4) . '-' . substr($cnpj, 13, 2);
+                break;
+            default:
+                throw new LengthException("O comprimento do argumento precisa estar entre 14 e 15 números/digitos!");
+                break;
         }
         return $format;
     }
+
 }
