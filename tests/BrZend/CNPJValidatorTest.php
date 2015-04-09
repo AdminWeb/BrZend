@@ -14,17 +14,7 @@ class CNPJValidatorTest extends \PHPUnit_Framework_TestCase
     public function tearDown(){
          
     }
-    /**
-     * @covers BrZend\Validator\CPF::isValid
-     * @expectedException LengthException
-     * @expectedExceptionMessage O comprimento do argumento precisa ser de 15 numeros/digitos!
-     */
-    public function testLengthOfFourTeenDigits(){
-        $this->setExpectedException(
-            'LengthException', 'O comprimento do argumento precisa ser de 15 numeros/digitos!'
-        );
-        $this->obj->isValid('12345');
-    }
+    
     /**
      * @covers BrZend\Validator\CNPJ::firstDigit
      */
