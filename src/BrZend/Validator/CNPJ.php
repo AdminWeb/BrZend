@@ -3,6 +3,7 @@
 namespace BrZend\Validator;
  
 use Zend\Validator\AbstractValidator;
+
 class CNPJ extends AbstractValidator {
  
     const LENGTH = 'length';

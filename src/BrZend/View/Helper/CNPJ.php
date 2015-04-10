@@ -3,7 +3,6 @@
 namespace BrZend\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
-use \LengthException;
 
 class CNPJ extends AbstractHelper {
 
