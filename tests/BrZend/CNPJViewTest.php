@@ -32,20 +32,6 @@ class CNPJTest extends Framework\TestCase
         parent::tearDown();
     }
 
-   
-
-     
-    /**
-     * @covers BrZend\View\Helper\Cnpj::__invoke
-     * @expectedExCnpjtion LengthException
-     * @expectedExCnpjtionMessage O comprimento do argumento precisa ser de 15 numeros/digitos!
-     */
-    public function testOnlyExceptionEndNumbersLengthLessthanFourteen(){
-        $this->setExpectedException(
-            'LengthException', 'O comprimento do argumento precisa estar entre 14 e 15 números/digitos!'
-        );
-        $this->Cnpj->__invoke(12345);
-    }
      
     /**
      * @covers BrZend\View\Helper\Cnpj::__invoke
