@@ -15,6 +15,7 @@ class CNPJ extends AbstractValidator {
     );
  
     public function isValid($value) {
+        $isValid = true;
         $value = preg_replace("/[^0-9]/", "", $value);
         $this->setValue($value);
         $one = $this->firstDigit($value);
@@ -22,9 +23,9 @@ class CNPJ extends AbstractValidator {
         $digits = substr($value, -2);
         if (!($digits[0] == $one) && !($digits[1] == $two)) {
             $this->error(self::CNPJ);
-            return false;
+            $isValid = false;
         }
-        return true;
+        return $isValid;
     }
  
     public function firstDigit($value) {
