@@ -16,10 +16,6 @@ class CNPJ extends AbstractValidator {
  
     public function isValid($value) {
         $value = preg_replace("/[^0-9]/", "", $value);
-        if (strlen($value) != 15) {
-            $this->error(self::LENGTH);
-            return false;
-        }
         $this->setValue($value);
         $one = $this->firstDigit($value);
         $two = $this->secondDigit($value);

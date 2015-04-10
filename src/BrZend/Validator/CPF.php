@@ -2,7 +2,6 @@
 namespace BrZend\Validator;
 
 use Zend\Validator\AbstractValidator;
-use \LengthException;
 /**
  *
  * @author igor
@@ -28,10 +27,6 @@ class CPF extends AbstractValidator
     { 
         $isValid = false;
         $numbers = preg_replace("/[^0-9]/", "", $value);
-        if (strlen($numbers) != 11) {
-            $this->error(self::LENGTH);
-            throw new LengthException("O comprimento do argumento precisa ser de 11 numeros/digitos!");            
-        }    
         $final = explode('-',$value);
         $dig1 = $this->getDigitOne($numbers);
         $dig2 = $this->getDigitTwo($numbers);
