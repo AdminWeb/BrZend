@@ -1,7 +1,6 @@
 <?php
 namespace BrZendTest;
 use BrZend\Validator\CPF;
-use \InvalidArgumentException;
 use \ReflectionMethod;
 /**
  * CPF test case.
@@ -75,7 +74,7 @@ class CPFValidatorTest extends Framework\TestCase
         $this->assertEquals(5,$this->callPrivate($this->CPF,'getDigitTwo','1114447773'));
     }
 
-    protected function callPrivate($object, $methodName, $arg1)
+    protected function callPrivate($object, $methodName)
     {
         if (!is_object($object))
         {

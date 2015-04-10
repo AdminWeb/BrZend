@@ -20,7 +20,8 @@
 	"name" : "adminweb/br-zend",
 	"description" : "Formatters and Validators in Brazilian Format Numbers",
 	"require" : {
-		"php" : ">=5.3"
+		"php" : ">=5.3",
+                "zendframework/zendframework":"dev-master"
 	},
 	"require-dev":{
 		"phpunit/phpunit":"dev-master",
