@@ -24,8 +24,8 @@ $path = array(
 );
 set_include_path(implode(PATH_SEPARATOR, $path));
 
-require_once  'Zend/Loader/AutoloaderFactory.php';
-require_once  'Zend/Loader/StandardAutoloader.php';
+require_once  '../vendor/autoload.php';
+
 
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
