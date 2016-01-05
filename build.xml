@@ -1,4 +1,4 @@
-<project name="name-of-project" default="full-build">
+<project name="PHPTESTE2" default="full-build">
     <property name="pdepend" value="${basedir}/vendor/bin/pdepend"/>
     <property name="phpcpd"  value="${basedir}/vendor/bin/phpcpd"/>
     <property name="phpcs"   value="${basedir}/vendor/bin/phpcs"/>
