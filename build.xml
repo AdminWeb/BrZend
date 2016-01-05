@@ -1,11 +1,11 @@
 <project name="name-of-project" default="full-build">
-  <property name="pdepend" value="${basedir}/build/tools/pdepend.phar"/>
- <property name="phpcpd"  value="${basedir}/build/tools/phpcpd.phar"/>
- <property name="phpcs"   value="${basedir}/build/tools/phpcs.phar"/>
- <property name="phpdox"  value="${basedir}/build/tools/phpdox.phar"/>
- <property name="phploc"  value="${basedir}/build/tools/phploc.phar"/>
- <property name="phpmd"   value="${basedir}/build/tools/phpmd.phar"/>
- <property name="phpunit" value="${basedir}/build/tools/phpunit.phar"/>
+    <property name="pdepend" value="${basedir}/vendor/bin/pdepend"/>
+    <property name="phpcpd"  value="${basedir}/vendor/bin/phpcpd"/>
+    <property name="phpcs"   value="${basedir}/vendor/bin/phpcs"/>
+    <property name="phpdox"  value="${basedir}/vendor/bin/phpdox"/>
+    <property name="phploc"  value="${basedir}/vendor/bin/phploc"/>
+    <property name="phpmd"   value="${basedir}/vendor/bin/phpmd"/>
+    <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/> 
     <target name="full-build" depends="prepare,static-analysis,phpunit,phpdox,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation"/>
     <target name="full-build-parallel" depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure" description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
     <target name="quick-build" depends="prepare,lint,phpunit-no-coverage" description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
