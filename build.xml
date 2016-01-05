@@ -1,4 +1,4 @@
-<project name="PHPTESTE2" default="full-build-parallel">
+<project name="BrZend" default="full-build-parallel">
     <property name="pdepend" value="${basedir}/vendor/bin/pdepend"/>
     <property name="phpcpd"  value="${basedir}/vendor/bin/phpcpd"/>
     <property name="phpcs"   value="${basedir}/vendor/bin/phpcs"/>
