@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="${basedir}/tests/bootstrap.php"
+<phpunit bootstrap="../tests/bootstrap.php"
          verbose="true">
     <testsuites>
         <testsuite name="Money">
-            <directory>${basedir}/tests/</directory>
+            <directory>../tests/</directory>
         </testsuite>
     </testsuites>
 
