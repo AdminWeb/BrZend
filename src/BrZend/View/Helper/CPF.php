@@ -26,6 +26,6 @@ class CPF extends AbstractHelper
         if (strlen($cpf) != 11) {
             throw new LengthException("O comprimento do argumento precisa ser de 11 numeros/digitos!");
         }
-        return substr($cpf,0,3).'.'.substr($cpf,3,3).'.'.substr($cpf,6,3).'-'.substr($cpf,9,2);                
+        return substr($cpf, 0, 3).'.'.substr($cpf, 3, 3).'.'.substr($cpf, 6, 3).'-'.substr($cpf, 9, 2);                
     }
 }
