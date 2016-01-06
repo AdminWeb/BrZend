@@ -153,7 +153,7 @@
         <property name="phpunit.done" value="true"/>
     </target>
     <target name="phpdox" unless="phpdox.done" depends="phploc-ci,phpcs-ci,phpmd-ci" description="Generate project documentation using phpDox">
-        <exec executable="${phpdox}" dir="${basedir}/build" taskname="phpdox"/>
+        <exec executable="${phpdox}" dir="${basedir}/build/api" taskname="phpdox"/>
         <property name="phpdox.done" value="true"/>
     </target>
     <target name="-check-failure">
