@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
-         bootstrap="../src/tests/boostrap.php"
+         bootstrap="../tests/boostrap.php"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutTodoAnnotatedTests="true"
@@ -8,8 +8,8 @@
          forceCoversAnnotation="true"
          verbose="true">
     <testsuites>
-        <testsuite name="Money">
-            <directory suffix="Test.php">../tests</directory>
+        <testsuite name="BrZend">
+            <directory>../tests</directory>
         </testsuite>
     </testsuites>
 
