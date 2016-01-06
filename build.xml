@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Money" default="build">
+<project name="BrZend" default="build">
     <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdox,-check-failure"/>
 
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
@@ -11,7 +11,7 @@
         <property name="clean.done" value="true"/>
     </target>
 
-    <target name="prepare" unless="prepare.done" depends="clean,generate-code" description="Prepare for build">
+    <target name="prepare" unless="prepare.done" depends="clean" description="Prepare for build">
         <mkdir dir="${basedir}/build/api"/>
         <mkdir dir="${basedir}/build/coverage"/>
         <mkdir dir="${basedir}/build/logs"/>
@@ -19,17 +19,9 @@
         <property name="prepare.done" value="true"/>
     </target>
 
-    <target name="generate-code" description="Generate Currency-specific subclasses of Money and autoloader code">
-        <exec executable="${basedir}/build/generate-child-classes.php" taskname="generate-code"/>
+   
 
-        <exec executable="${basedir}/build/tools/phpab.phar" taskname="generate-code">
-            <arg value="--output"/>
-            <arg path="src/autoload.php"/>
-            <arg path="src"/>
-        </exec>
-    </target>
-
-    <target name="lint" depends="generate-code">
+    <target name="lint">
         <apply executable="php" failonerror="true" taskname="lint">
             <arg value="-l"/>
 
