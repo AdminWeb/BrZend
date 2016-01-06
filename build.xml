@@ -60,7 +60,7 @@
     </target>
 
     <target name="pdepend" depends="prepare" description="Calculate software metrics using PHP_Depend">
-        <exec executable="${basedir}/build/tools/pdepend.phar" taskname="pdepend">
+        <exec executable="${basedir}/vendor/bin/pdepend" taskname="pdepend">
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml"/>
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg"/>
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg"/>
