@@ -2,8 +2,9 @@
 <phpunit bootstrap="../tests/bootstrap.php"
          verbose="true">
     <testsuites>
-        <testsuite name="Money">
+        <testsuite name="BrZend">
             <directory>../tests/</directory>
+             <exclude>../vendor</exclude>
         </testsuite>
     </testsuites>
 
