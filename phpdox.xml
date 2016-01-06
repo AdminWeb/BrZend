@@ -7,7 +7,7 @@
    <exclude mask="vendor/*" />
   </collector>
 
-  <generator output=".">
+  <generator output="build/logs">
    <enrich base="logs">
     <source type="build" />
     <source type="git" />
