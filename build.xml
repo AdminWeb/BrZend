@@ -87,7 +87,7 @@
         <exec executable="${phpmd}" taskname="phpmd">
             <arg path="${basedir}/src"/>
             <arg value="text"/>
-            <arg path="${basedir}/build/phpmd.xml"/>
+            <arg path="${basedir}/build/logs/pmd.xml"/>
         </exec>
         <property name="phpmd.done" value="true"/>
     </target>
@@ -137,6 +137,17 @@
         </exec>
         <property name="phpcpd.done" value="true"/>
     </target>
+    <target name="phploc-ci" depends="prepare" description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
+    <exec executable="${toolsdir}phploc">
+        <arg value="--count-tests"/>
+        <arg value="--log-csv"/>
+        <arg path="${basedir}/build/logs/phploc.csv"/>
+        <arg value="--log-xml"/>
+        <arg path="${basedir}/build/logs/phploc.xml"/>
+        <arg path="${basedir}/src"/>
+        <arg path="${basedir}/tests"/>
+    </exec>
+</target>
     <target name="phpunit" unless="phpunit.done" depends="prepare" description="Run unit tests with PHPUnit">
         <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
             <arg value="--configuration"/>
