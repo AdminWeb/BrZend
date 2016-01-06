@@ -16,6 +16,7 @@
         <mkdir dir="${basedir}/build/coverage"/>
         <mkdir dir="${basedir}/build/logs"/>
         <mkdir dir="${basedir}/build/pdepend"/>
+        <chmod file="${basedir}/build/tools/**" perm="ugo+x"/>
         <property name="prepare.done" value="true"/>
     </target>
 
